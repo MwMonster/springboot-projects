@@ -1,0 +1,1 @@
+console("resources/test.js")
