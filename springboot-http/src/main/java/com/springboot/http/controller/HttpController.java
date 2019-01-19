@@ -14,7 +14,7 @@ import java.util.Map;
  */
 //RestController相当于是Controller+ResponseBody
 @RestController
-public class GetController {
+public class HttpController {
 
     private Map<String, Object> params = new HashMap<>();
 
@@ -112,4 +112,41 @@ public class GetController {
     }
 
 
+    /**
+     * 功能描述：测试PostMapping
+     * @param id
+     * @param pwd
+     * @return
+     */
+    @PostMapping(value = "/v1/test_post")
+    public Object testPost(String id, String pwd){
+        params.clear();
+        params.put("id", id);
+        params.put("pwd", pwd);
+        return pwd;
+    }
+
+    /**
+     * 功能描述：测试PutMapping
+     * @param id
+     * @return
+     */
+    @PutMapping(value = "/v1/test_put")
+    public Object testPut(String id){
+        params.clear();
+        params.put("id", id);
+        return params;
+    }
+
+    /**
+     * 功能描述：测试DeleteMapping
+     * @param id
+     * @return
+     */
+    @DeleteMapping(value = "/v1/test_del")
+    public Object testDelete(String id){
+        params.clear();
+        params.put("id", id);
+        return params;
+    }
 }
